@@ -7,21 +7,17 @@ import WriteWarranty from './WriteWarranty';
 
 import { Button } from 'react-bootstrap';
 // redux
-import store from '../../redux/store'
+import store from '../../redux/store';
 import { checkboxClick } from '../../redux/action';
 
 class Warranty extends React.Component {
   constructor(props) {
     super(props);
     this.state = store.getState();
-    store.subscribe(() => console.log(this.state, '監聽監聽'))
   }
-  checkboxClick=()=>{
+  checkboxClick = () => {
     store.dispatch(checkboxClick(1));
-    console.log(this.state, '1')
-    console.log(this.state.checkboxCheck, 'this.staet');
-    console.log(store.getState().checkboxCheck, 'getstate');
-  }
+  };
   render() {
     return (
       <div>
@@ -64,12 +60,19 @@ class Warranty extends React.Component {
             <div className="text-center text-white p-5">
               <h1 className="p-3">同意聲明書</h1>
               <div className="d-flex justify-content-center p-3">
-                <input className="checkboxStyle" type="checkbox" onClick={this.checkboxClick} />
+                <input
+                  className="checkboxStyle"
+                  type="checkbox"
+                  onClick={this.checkboxClick}
+                />
                 <h5 className="pl-2">本人已經詳細看過保固聲明並且願意保固</h5>
               </div>
-              <Button variant="dark" theme="dark">
+              {store.getState().checkboxCheck.length === 0 ? (
+                <Button variant="dark" theme="dark">
                   送出
-              </Button>
+                </Button>
+              ) : null}
+              {console.log(store.getState().checkboxCheck.length, 'hello')}
             </div>
             <WriteWarranty />
           </div>
