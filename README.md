@@ -4,3 +4,4 @@ Tool used
 2.redux <br>
 3.react-router <br>
 4.react-bootstrap <br>
+5.lodash <br>
