@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Card } from 'react-bootstrap';
-
 class Server extends React.Component {
   render() {
     return (

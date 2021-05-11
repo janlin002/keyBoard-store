@@ -22,9 +22,9 @@ class Navbars extends React.Component {
               <Link className="link" to="/warranty">
                 保固服務
               </Link>
-              <Link className="link" to="/info">
+              {/* <Link className="link" to="/info">
                 最新資訊
-              </Link>
+              </Link> */}
               <Link className="link" to="/aboutus">
                 關於我們
               </Link>

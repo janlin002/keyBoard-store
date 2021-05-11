@@ -18,8 +18,8 @@ class Carousels extends React.Component {
               <Link to="/product" className="mainLink">
                 產品資訊
               </Link>
-              <Link to="/info" className="mainLink">
-                最新資訊
+              <Link to="/warranty" className="mainLink">
+                保固服務
               </Link>
               <Link to="/aboutus" className="mainLink">
                 關於我們
@@ -37,8 +37,8 @@ class Carousels extends React.Component {
               <Link to="/product" className="mainLink">
                 產品資訊
               </Link>
-              <Link to="/info" className="mainLink">
-                最新資訊
+              <Link to="/warranty" className="mainLink">
+                保固服務
               </Link>
               <Link to="/aboutus" className="mainLink">
                 關於我們
@@ -56,8 +56,8 @@ class Carousels extends React.Component {
               <Link to="/product" className="mainLink">
                 產品資訊
               </Link>
-              <Link to="/info" className="mainLink">
-                最新資訊
+              <Link to="/warranty" className="mainLink">
+                保固服務
               </Link>
               <Link to="/aboutus" className="mainLink">
                 關於我們
