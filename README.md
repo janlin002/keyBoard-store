@@ -6,3 +6,5 @@ Tool used
 4.bootstrap <br>
 5.react-bootstrap <br>
 6.lodash <br>
+7.fontawesome icon <br>
+8.unsplash<br>
