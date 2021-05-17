@@ -1,11 +1,24 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import Navbars from '../NavBars';
 import Carousel from '../Carousel';
 import Footer from '../Footer';
+import Modals from './KeyboardModal';
+import { keyboard } from '../../Config/';
+import store from '../../redux/store';
+import { itemId } from '../../redux/action'
 
 class Keyboard extends React.Component {
+  constructor() {
+    super();
+    this.state = store.getState();
+    console.log(this.state, 'state');
+  }
+  sendItemsId = (id) => {
+    store.dispatch(itemId(id));
+  };
   render() {
     return (
       <div>
@@ -17,58 +30,40 @@ class Keyboard extends React.Component {
               <h1>鍵盤 - KeyBoards</h1>
             </div>
             <div className="row">
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </div>
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </div>
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </div>
+              {keyboard.map((items) => (
+                <div className="col-sm-4 text-center pb-5">
+                  <Card
+                    style={{ border: 'none' }}
+                    className="cardItem text-white"
+                    bg="dark"
+                  >
+                    <Card.Img variant="top" src={items.image} />
+                    <Card.Body>
+                      <Card.Title>{items.name}</Card.Title>
+                      <Card.Text>價格：${items.price}元</Card.Text>
+                      <div className="shopBtn">
+                        <Button
+                          variant="primary"
+                          className="itemBtn btn-light"
+                          onClick={() => {
+                            this.sendItemsId(items.id);
+                          }}
+                        >
+                          <Link
+                            to="/product/Keyboard/keyboardmodal"
+                            className="infoLink"
+                          >
+                            查看詳情
+                          </Link>
+                        </Button>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-
         <Footer />
       </div>
     );

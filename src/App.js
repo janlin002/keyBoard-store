@@ -8,6 +8,7 @@ import MainPage from './Component/Main Page/MainPage';
 import AboutUs from './Component/About Us/AboutUs';
 import Keyboard from './Component/Product Info/Keyboard';
 import Mouse from './Component/Product Info/Mouse';
+import KeyboardModal from './Component/Product Info/KeyboardModal';
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Route exact path="/aboutus" component={AboutUs}></Route>
           <Route exact path="/product/Keyboard" component={Keyboard}></Route>
           <Route exact path="/product/Mouse" component={Mouse}></Route>
+          <Route exact path="/product/Keyboard/keyboardmodal" component={KeyboardModal}></Route>
         </Switch>
       </Router>
     );

@@ -4,9 +4,12 @@ import { Nav, Navbar } from 'react-bootstrap';
 import '../style/index.css';
 
 class Navbars extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div>
+      <div className="navbarPosition">
         <Navbar bg="dark" expand="lg" variant="dark">
           <Navbar.Brand>
             <Link to="/" className="mainLink">
@@ -29,6 +32,9 @@ class Navbars extends React.Component {
                 關於我們
               </Link>
             </Nav>
+            <i className="fas fa-shopping-cart shopCartIcon fa-2x"></i>
+            <Link className="link shopLink">購物車</Link>
+            <span className="badge badge-pill badge-danger">1</span>
           </Navbar.Collapse>
         </Navbar>
       </div>

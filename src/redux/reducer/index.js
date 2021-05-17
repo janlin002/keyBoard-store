@@ -1,18 +1,20 @@
-import { ADD_TODOITEM, CHECKBOX_CLICK } from '../action/actionTypes';
+import { ADD_TODOITEM, CHECKBOX_CLICK, ITEMID } from '../action/actionTypes';
 import _ from 'lodash';
 const initialState = {
-  checkboxCheck: []
+  checkboxCheck: [],
+  itemId: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODOITEM:
-      console.log('reducer');
     case CHECKBOX_CLICK:
       const { checkboxCheck } = state;
       const value = action.payload;
       return {...state, checkboxCheck:_.xor(checkboxCheck, [value])}
-
+    case ITEMID:
+      const id = action.payload;
+      return {...state, itemId: id}
     default:
       return state;
   }

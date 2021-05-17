@@ -5,6 +5,8 @@ import Navbars from '../NavBars';
 import Carousel from '../Carousel';
 import Footer from '../Footer';
 
+import { mouse } from '../../Config'
+
 class Mouse extends React.Component {
   render() {
     return (
@@ -17,54 +19,25 @@ class Mouse extends React.Component {
               <h1>滑鼠 - Mouses</h1>
             </div>
             <div className="row">
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
+            {mouse.map((items) => (
+                <div className="col-sm-4 text-center pb-5">
+                <Card style={{ border: 'none' }} className="cardItem text-white" bg='dark'>
                   <Card.Img
                     variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+                    src={items.image}
                   />
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{items.name}</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      價格：${items.price}元
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <div className="shopBtn">
+                    <Button variant="primary" className="itemBtn btn-light" onClick={()=>{this.ProductInfoBtn(items.id)}}>查看詳情</Button>
+                    </div>
                   </Card.Body>
                 </Card>
               </div>
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </div>
-              <div className="col-sm-4">
-                <Card style={{ border: 'none' }}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.unsplash.com/photo-1616837662891-c62d5fe6418e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </div>
+              ))}
             </div>
           </div>
         </div>

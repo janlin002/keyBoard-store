@@ -31,7 +31,7 @@ class AboutUs extends React.Component {
               <h5 className="text-warning">營業時間?</h5>
               <div>早上9:00~晚上6:00</div>
               <h5 className="pt-3 text-warning">多少錢可以免運？</h5>
-              <div>單筆消費達到一萬即可免運</div>
+              <div>單筆消費達到五千即可免運</div>
               <h5 className="pt-3 text-warning">可否分期付款？</h5>
               <div>可以</div>
               <h5 className="pt-3 text-warning">付款方式</h5>
