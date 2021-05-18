@@ -6,12 +6,16 @@ import { keyboard } from '../../Config';
 import store from '../../redux/store';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
+import { addToCart } from '../../redux/action';
 
 class KeyboardModal extends React.Component {
   constructor() {
     super();
     this.state = store.getState();
-    console.log(this.state.itemId);
+    // store.subscribe(()=>this.state = store.getState());
+  }
+  addToCart =(item)=>{
+    store.dispatch(addToCart(keyboard[item]))
   }
   render() {
     return (
@@ -41,12 +45,12 @@ class KeyboardModal extends React.Component {
                 <h1>{keyboard[this.state.itemId - 1].name}</h1>
                 <h3 className="pt-3">NT.${keyboard[this.state.itemId - 1].price}</h3>
                 <h5 className="pt-5">{keyboard[this.state.itemId - 1].info}</h5>
-                <div className="d-flex  submitButton">
+                <div className="d-flex  submitButton pb-5">
                   <div className="pr-4 pt-3">
                     <Button variant="danger"><Link to="/product/Keyboard" className="modalLink">返回上一頁</Link></Button>
                   </div>
                   <div className="pt-3">
-                    <Button variant="light">加到購物車</Button>
+                    <Button variant="light" onClick={()=>{this.addToCart(this.state.itemId - 1)}}>加到購物車</Button>
                   </div>
                 </div>
               </div>

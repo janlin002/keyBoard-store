@@ -31,59 +31,38 @@ const keyboard = [
 const mouse = [
     {
         id: 1,
-        name: '滑鼠',
+        name: 'Apple官方滑鼠',
         image: 'https://images.unsplash.com/photo-1599779600619-1012639ed04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
+        info: 'Apple團隊精心設計的滑鼠',
+        price: '2200'
     },
     {
         id: 2,
-        name: '滑鼠',
+        name: '羅技滑鼠',
         image: 'https://images.unsplash.com/photo-1618499890638-3a0dd4b278b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
+        info: '羅技官方滑鼠，看似簡單，卻相當實用',
+        price: '2500'
     },
     {
         id: 3,
-        name: '滑鼠',
+        name: 'MX Master 3',
         image: 'https://images.unsplash.com/photo-1613091253127-2cc8840f16f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
+        info: '羅技官方主打的滑鼠，網路上一致好評',
+        price: '2340'
     },
     {
         id: 4,
-        name: '滑鼠',
+        name: '雷蛇滑鼠',
         image: 'https://images.unsplash.com/photo-1594008671712-da08718510bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
+        info: '擁有不凡的手感，跟最新的RGB燈效',
+        price: '4200'
     },
     {
         id: 5,
-        name: '滑鼠',
+        name: 'ASUS滑鼠',
         image: 'https://images.unsplash.com/photo-1613141411244-0e4ac259d217?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
-    },
-    {
-        id: 6,
-        name: '滑鼠',
-        image: 'https://images.unsplash.com/photo-1619334084350-b093f0a9b40e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
-    },
-    {
-        id: 7,
-        name: '滑鼠',
-        image: 'https://images.unsplash.com/photo-1568886961933-d635c34531a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
-    },
-    {
-        id: 8,
-        name: '滑鼠',
-        image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80',
-        info: '擁有超級好的手感，跟最新的RGB燈效',
-        price: '4300'
+        info: '擁有RGB燈效，跟強大的散風能力',
+        price: '5500'
     },
 ]
 export { keyboard, mouse };

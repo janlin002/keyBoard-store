@@ -1,6 +1,7 @@
 import React from 'react';
 
 class WriteWarranty extends React.Component {
+
   render() {
     return (
       <div>
@@ -25,7 +26,7 @@ class WriteWarranty extends React.Component {
                   />
                 </div>
                 <div className="col-12 text-center p-3">
-                  <button type="submit" className="btn btn-dark" variant="dark">
+                  <button className="btn btn-dark" variant="dark">
                     送出
                   </button>
                 </div>

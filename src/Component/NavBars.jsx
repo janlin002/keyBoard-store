@@ -2,15 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import '../style/index.css';
+import store from '../redux/store';
 
 class Navbars extends React.Component {
   constructor(props) {
     super(props);
+    this.state = store.getState();
+    store.subscribe(this.storeChange);
+  }
+  storeChange=()=>{
+    this.setState(store.getState())
   }
   render() {
     return (
       <div className="navbarPosition">
-        <Navbar bg="dark" expand="lg" variant="dark">
+        <Navbar bg="dark" expand="lg" variant="dark" className="fixed-top">
           <Navbar.Brand>
             <Link to="/" className="mainLink">
               鍵盤買賣
@@ -32,9 +38,11 @@ class Navbars extends React.Component {
                 關於我們
               </Link>
             </Nav>
-            <i className="fas fa-shopping-cart shopCartIcon fa-2x"></i>
-            <Link className="link shopLink">購物車</Link>
-            <span className="badge badge-pill badge-danger">1</span>
+            
+            <Link to="/carts">
+              <i className="fas fa-shopping-cart shopCartIcon fa-2x" />
+              <span className="badge badge-pill badge-danger">{this.state.orderId.length}</span>
+            </Link>
           </Navbar.Collapse>
         </Navbar>
       </div>

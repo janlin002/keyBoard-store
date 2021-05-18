@@ -1,8 +1,9 @@
-import { ADD_TODOITEM, CHECKBOX_CLICK, ITEMID } from '../action/actionTypes';
+import { ADD_TODOITEM, CHECKBOX_CLICK, ITEMID, ADD_TO_CART } from '../action/actionTypes';
 import _ from 'lodash';
 const initialState = {
   checkboxCheck: [],
   itemId: '',
+  orderId: [],
 };
 
 export default (state = initialState, action) => {
@@ -15,6 +16,11 @@ export default (state = initialState, action) => {
     case ITEMID:
       const id = action.payload;
       return {...state, itemId: id}
+    case ADD_TO_CART:
+      const { orderId } = state;
+      const item = action.payload;
+      console.log(item, 'reducer');
+      return {...state, orderId: _.union(orderId, [item])}
     default:
       return state;
   }

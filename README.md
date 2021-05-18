@@ -8,3 +8,4 @@ Tool used
 6.lodash <br>
 7.fontawesome icon <br>
 8.unsplash<br>
+9.Random user generator<br>

@@ -1,13 +1,22 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import Navbars from '../NavBars';
 import Carousel from '../Carousel';
 import Footer from '../Footer';
 
-import { mouse } from '../../Config'
+import { mouse } from '../../Config';
+import store from '../../redux/store';
+import { itemId } from '../../redux/action';
+
+
 
 class Mouse extends React.Component {
+  sendItemsId =(id)=>{
+    console.log(id);
+    store.dispatch(itemId(id))
+  }
   render() {
     return (
       <div>
@@ -19,24 +28,33 @@ class Mouse extends React.Component {
               <h1>滑鼠 - Mouses</h1>
             </div>
             <div className="row">
-            {mouse.map((items) => (
+              {mouse.map((items) => (
                 <div className="col-sm-4 text-center pb-5">
-                <Card style={{ border: 'none' }} className="cardItem text-white" bg='dark'>
-                  <Card.Img
-                    variant="top"
-                    src={items.image}
-                  />
-                  <Card.Body>
-                    <Card.Title>{items.name}</Card.Title>
-                    <Card.Text>
-                      價格：${items.price}元
-                    </Card.Text>
-                    <div className="shopBtn">
-                    <Button variant="primary" className="itemBtn btn-light" onClick={()=>{this.ProductInfoBtn(items.id)}}>查看詳情</Button>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </div>
+                  <Card
+                    style={{ border: 'none' }}
+                    className="cardItem text-white"
+                    bg="dark"
+                  >
+                    <Card.Img variant="top" src={items.image} />
+                    <Card.Body>
+                      <Card.Title>{items.name}</Card.Title>
+                      <Card.Text>價格：${items.price}元</Card.Text>
+                      <div className="shopBtn">
+                        <Button
+                          variant="primary"
+                          className="itemBtn btn-light"
+                          onClick={() => {
+                            this.sendItemsId(items.id);
+                          }}
+                        >
+                          <Link to="/product/Keyboard/mousemodal" className='infoLink'>
+                            查看詳情
+                          </Link>
+                        </Button>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>

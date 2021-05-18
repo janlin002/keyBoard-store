@@ -93,12 +93,6 @@
     display: block;
   }
 }
-.navbarPosition {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
 .badge {
   position: absolute;
 	top: 8px;
@@ -124,4 +118,11 @@
   .productText {
     display: none;
   }
+}
+.bighead{
+  border-radius: 50%;
+  min-width: 150px;
+}
+.carouselIndex {
+  z-index: auto;
 }
