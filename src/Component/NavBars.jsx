@@ -43,6 +43,7 @@ class Navbars extends React.Component {
               <i className="fas fa-shopping-cart shopCartIcon fa-2x" />
               <span className="badge badge-pill badge-danger">{this.state.orderId.length}</span>
             </Link>
+            <Link to="/carts" className="shopLink link">購物車</Link>
           </Navbar.Collapse>
         </Navbar>
       </div>

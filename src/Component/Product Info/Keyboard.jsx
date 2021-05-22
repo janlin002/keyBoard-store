@@ -30,7 +30,7 @@ class Keyboard extends React.Component {
               <h1>鍵盤 - KeyBoards</h1>
             </div>
             <div className="row">
-              {keyboard.map((items) => (
+              {keyboard.map((items, key) => (
                 <div className="col-sm-4 text-center pb-5">
                   <Card
                     style={{ border: 'none' }}
