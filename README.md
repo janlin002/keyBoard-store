@@ -2,11 +2,12 @@ Tool used
 
 1.react <br>
 2.redux <br>
-3.react-router <br>
-4.react-router-dom<br>
-5.bootstrap <br>
-6.react-bootstrap <br>
-7.lodash <br>
+3.react-redux<br>
+4.react-router <br>
+5.react-router-dom<br>
+6.bootstrap <br>
+7.react-bootstrap <br>
+8.lodash <br>
 
 others
 
