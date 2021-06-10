@@ -1,36 +1,30 @@
 import React from 'react';
-import Navbars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
 import { keyboard } from '../../Config';
 import store from '../../redux/store';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import { addToCart } from '../../redux/action';
+import { connect } from 'react-redux';
 
 class KeyboardModal extends React.Component {
   constructor() {
     super();
     this.state = store.getState();
-    // store.subscribe(()=>this.state = store.getState());
   }
   addToCart = (item) => {
     store.dispatch(addToCart(keyboard[item]));
-    let name = 'Tom';
-    localStorage.setItem('myname', name);
   };
   render() {
+    const orderId = this.props.orderId;
     return (
       <div>
-        <Navbars />
-        <Carousel />
         <div className="mainContentbg p-5">
           <div className="container">
             <div className="row">
               <div className="col-sm-6">
                 <Card className="bg-dark text-white imgBox">
                   <Card.Img
-                    src={keyboard[this.state.itemId - 1].image}
+                    src={keyboard[this.props.itemId - 1].image}
                     alt="Card image"
                     className="img"
                   />
@@ -47,14 +41,14 @@ class KeyboardModal extends React.Component {
                   </Link>
                   >
                   <Link className="link p-0">
-                    {keyboard[this.state.itemId - 1].name}
+                    {keyboard[this.props.itemId - 1].name}
                   </Link>
                 </div>
-                <h1>{keyboard[this.state.itemId - 1].name}</h1>
+                <h1>{keyboard[this.props.itemId - 1].name}</h1>
                 <h3 className="pt-3">
-                  NT.${keyboard[this.state.itemId - 1].price}
+                  NT.${keyboard[this.props.itemId - 1].price}
                 </h3>
-                <h5 className="pt-5">{keyboard[this.state.itemId - 1].info}</h5>
+                <h5 className="pt-5">{keyboard[this.props.itemId - 1].info}</h5>
                 <div className="d-flex  submitButton pb-5">
                   <div className="pr-4 pt-3">
                     <Button variant="danger">
@@ -67,7 +61,7 @@ class KeyboardModal extends React.Component {
                     <Button
                       variant="light"
                       onClick={() => {
-                        this.addToCart(this.state.itemId - 1);
+                        this.addToCart(this.props.itemId - 1);
                       }}
                     >
                       加到購物車
@@ -78,10 +72,16 @@ class KeyboardModal extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
-export default KeyboardModal;
+const mapStateToProps = state =>({
+  itemId: state.itemId,
+  orderId: state.orderId
+})
+
+const keyboardContent = connect(mapStateToProps)(KeyboardModal);
+
+export default keyboardContent;

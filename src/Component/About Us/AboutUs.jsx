@@ -1,14 +1,9 @@
 import React from 'react';
-import NavBars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
 
 class AboutUs extends React.Component {
   render() {
     return (
       <div>
-        <NavBars />
-        <Carousel />
         <div className="mainContentbg pt-5">
           <div className="container warrantlyBorder">
             <div className="text-white text-center p-5">
@@ -39,7 +34,6 @@ class AboutUs extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

@@ -2,10 +2,6 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import Navbars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
-
 import { mouse } from '../../Config';
 import store from '../../redux/store';
 import { itemId } from '../../redux/action';
@@ -14,14 +10,11 @@ import { itemId } from '../../redux/action';
 
 class Mouse extends React.Component {
   sendItemsId =(id)=>{
-    console.log(id);
     store.dispatch(itemId(id))
   }
   render() {
     return (
       <div>
-        <Navbars />
-        <Carousel />
         <div className="mainContentbg pt-5">
           <div className="container">
             <div className="text-center text-white pb-5">
@@ -59,7 +52,6 @@ class Mouse extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

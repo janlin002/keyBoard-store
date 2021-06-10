@@ -1,14 +1,11 @@
 import React from 'react';
 //Component
-import NavBars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
-import WriteWarranty from './WriteWarranty';
 
 import { Button } from 'react-bootstrap';
 // redux
 import store from '../../redux/store';
 import { checkboxClick } from '../../redux/action';
+import { connect } from 'react-redux';
 
 class Warranty extends React.Component {
   constructor() {
@@ -16,15 +13,12 @@ class Warranty extends React.Component {
     this.state = store.getState();
   }
   checkboxClick = () => {
-    console.log('點擊事件');
     store.dispatch(checkboxClick(1));
     this.setState(store.getState());
   };
   render() {
     return (
       <div>
-        <NavBars />
-        <Carousel />
         <div className="mainContentbg pt-5">
           <div className="container warrantlyBorder">
             <div className="p-5 text-center text-white">
@@ -69,7 +63,7 @@ class Warranty extends React.Component {
                 />
                 <h5 className="pl-2">本人已經詳細看過保固聲明並且願意保固</h5>
               </div>
-              {this.state.checkboxCheck.length !== 0 ? (
+              {this.props.checkboxCheck.length !== 0 ? (
                 <Button variant="dark" theme="dark">
                   送出
                 </Button>
@@ -78,10 +72,15 @@ class Warranty extends React.Component {
             {/* <WriteWarranty /> */}
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
-export default Warranty;
+const mapStateToProps = state =>({
+  checkboxCheck: state.checkboxCheck
+})
+
+const WarrantyContent = connect(mapStateToProps)(Warranty)
+
+export default WarrantyContent;

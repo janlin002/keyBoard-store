@@ -66,4 +66,3 @@ const mouse = [
     },
 ]
 export { keyboard, mouse };
-// console.log(keyboard[0].name, 'test');

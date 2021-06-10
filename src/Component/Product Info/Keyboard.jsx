@@ -1,20 +1,16 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import Navbars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
-import Modals from './KeyboardModal';
 import { keyboard } from '../../Config/';
 import store from '../../redux/store';
-import { itemId } from '../../redux/action'
+import { itemId } from '../../redux/action';
 
 class Keyboard extends React.Component {
   constructor() {
     super();
     this.state = store.getState();
-    console.log(this.state, 'state');
   }
   sendItemsId = (id) => {
     store.dispatch(itemId(id));
@@ -22,8 +18,6 @@ class Keyboard extends React.Component {
   render() {
     return (
       <div>
-        <Navbars />
-        <Carousel />
         <div className="mainContentbg pt-5">
           <div className="container">
             <div className="text-center text-white pb-5">
@@ -64,10 +58,14 @@ class Keyboard extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
+const  mapStateToProps = state =>({
+  itemId: state.itemId
+})
 
-export default Keyboard;
+const key = connect(mapStateToProps)(Keyboard);
+
+export default key;

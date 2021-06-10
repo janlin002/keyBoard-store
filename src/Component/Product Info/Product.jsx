@@ -1,7 +1,4 @@
 import React from 'react';
-import NavBars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
 
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
@@ -10,8 +7,6 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-        <NavBars />
-        <Carousel />
         <div className="mainContentbg">
           <div className="container">
             <div className="p-5 text-center text-white">
@@ -59,7 +54,6 @@ class Products extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

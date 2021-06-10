@@ -4,15 +4,17 @@ import { Nav, Navbar } from 'react-bootstrap';
 import '../style/index.css';
 import store from '../redux/store';
 
+import { connect } from 'react-redux';
+
 class Navbars extends React.Component {
   constructor(props) {
     super(props);
     this.state = store.getState();
     store.subscribe(this.storeChange);
   }
-  storeChange=()=>{
-    this.setState(store.getState())
-  }
+  storeChange = () => {
+    this.setState(store.getState());
+  };
   render() {
     return (
       <div className="navbarPosition">
@@ -38,12 +40,16 @@ class Navbars extends React.Component {
                 關於我們
               </Link>
             </Nav>
-            
+
             <Link to="/carts">
               <i className="fas fa-shopping-cart shopCartIcon fa-2x" />
-              <span className="badge badge-pill badge-danger">{this.state.orderId.length}</span>
+              <span className="badge badge-pill badge-danger">
+                {this.props.orderId.length}
+              </span>
             </Link>
-            <Link to="/carts" className="shopLink link">購物車</Link>
+            <Link to="/carts" className="shopLink link">
+              購物車
+            </Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
@@ -51,4 +57,10 @@ class Navbars extends React.Component {
   }
 }
 
-export default Navbars;
+const mapStateToProps = state =>({
+  orderId: state.orderId
+})
+
+const pageNavbar = connect(mapStateToProps)(Navbars);
+
+export default pageNavbar;

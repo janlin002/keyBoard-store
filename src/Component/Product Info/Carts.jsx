@@ -1,9 +1,8 @@
 import React from 'react';
-import Navbars from '../NavBars';
-import Carousel from '../Carousel';
-import Footer from '../Footer';
 import store from '../../redux/store';
 import { removeItem } from '../../redux/action';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Carts extends React.Component {
   constructor() {
@@ -15,20 +14,16 @@ class Carts extends React.Component {
     this.setState(store.getState());
   };
   totalMoney = () => {
-    const orderId = this.state.orderId;
+    const orderId = this.props.orderId;
     let total = 0;
-    orderId.map((item)=>(
-      total+=item.price
-      ));
+    orderId.map((item) => (total += item.price));
     return total;
   };
   render() {
-    const orderId = this.state.orderId;
+    const orderId = this.props.orderId;
     return (
       <div>
-        <Navbars />
-        <Carousel />
-        <div className="mainContentbg cartPadding" >
+        <div className="mainContentbg cartPadding">
           <div className="container warrantlyBorder text-white text-center">
             <h1 className="p-3">購物車</h1>
             <div className="row text-white text-center">
@@ -67,14 +62,34 @@ class Carts extends React.Component {
             </div>
             <h5 className="text-right pr-5">
               <div>總計：{this.totalMoney()}元</div>
-              
             </h5>
           </div>
+          <div className="container pt-3 pr-0">
+            <div className="d-flex justify-content-end">
+              <Link to="/product">
+                <button type="button" class="btn btn-outline-primary mr-3">
+                  繼續購物
+                </button>
+              </Link>
+              {orderId.length > 0 ? (
+                <Link to="/checkout">
+                  <button type="button" class="btn btn-outline-danger">
+                    前往結帳
+                  </button>
+                </Link>
+              ) : null}
+            </div>
+          </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
-export default Carts;
+const mapStateToProps = (state) => ({
+  orderId: state.orderId,
+});
+
+const cartContent = connect(mapStateToProps)(Carts);
+
+export default cartContent;

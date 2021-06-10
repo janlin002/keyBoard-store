@@ -19,7 +19,6 @@ export default (state = initialState, action) => {
     case ADD_TO_CART: {
       const { orderId } = state;
       const item = action.payload;
-      console.log(item, 'reducer');
       return {...state, orderId: _.union(orderId, [item])};
     }
     case REMOVE_ITEM: {
