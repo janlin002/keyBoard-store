@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom';
 
 // component
 import Product from './Component/Product Info/Product';
@@ -20,6 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <HashRouter>
         <Router>
           <Navbars />
           <Carousel />
@@ -45,6 +46,7 @@ class App extends React.Component {
           </Switch>
           <Footer />
         </Router>
+        </HashRouter>
       </div>
     );
   }
