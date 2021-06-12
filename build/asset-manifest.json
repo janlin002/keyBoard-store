@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/keyBoard-store/static/css/main.f52b49fc.chunk.css",
-    "main.js": "/keyBoard-store/static/js/main.533de48c.chunk.js",
-    "main.js.map": "/keyBoard-store/static/js/main.533de48c.chunk.js.map",
+    "main.js": "/keyBoard-store/static/js/main.2fe31dfe.chunk.js",
+    "main.js.map": "/keyBoard-store/static/js/main.2fe31dfe.chunk.js.map",
     "runtime-main.js": "/keyBoard-store/static/js/runtime-main.64617381.js",
     "runtime-main.js.map": "/keyBoard-store/static/js/runtime-main.64617381.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/keyBoard-store/static/css/2.4c97ca4f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.4929492f.chunk.js",
     "static/css/main.f52b49fc.chunk.css",
-    "static/js/main.533de48c.chunk.js"
+    "static/js/main.2fe31dfe.chunk.js"
   ]
 }

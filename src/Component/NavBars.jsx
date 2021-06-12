@@ -20,7 +20,7 @@ class Navbars extends React.Component {
       <div className="navbarPosition">
         <Navbar bg="dark" expand="lg" variant="dark" className="fixed-top">
           <Navbar.Brand>
-            <Link to="/keyBoard-store/" className="mainLink">
+            <Link to="/" className="mainLink">
               鍵盤買賣
             </Link>
           </Navbar.Brand>
