@@ -137,3 +137,6 @@
     padding-bottom: 80px;
   }
 }
+.hoverText:hover {
+  color:rgb(255, 102, 0)
+}
