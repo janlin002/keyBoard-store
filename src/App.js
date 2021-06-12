@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 // component
 import Product from './Component/Product Info/Product';
@@ -20,7 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Navbars />
           <Carousel />
           <Switch>
