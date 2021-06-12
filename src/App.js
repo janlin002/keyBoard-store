@@ -25,7 +25,7 @@ class App extends React.Component {
           <Navbars />
           <Carousel />
           <Switch>
-            <Route exact path="/" component={MainPage}></Route>
+            <Route exact path="/keyBoard-store/" component={MainPage}></Route>
             <Route exact path="/product" component={Product}></Route>
             <Route exact path="/warranty" component={Warranty}></Route>
             <Route exact path="/aboutus" component={AboutUs}></Route>
