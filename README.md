@@ -8,6 +8,7 @@ Tool used
 6.bootstrap <br>
 7.react-bootstrap <br>
 8.lodash <br>
+9.aos<br>
 
 others
 
